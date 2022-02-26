@@ -3,7 +3,7 @@ import {observer} from "mobx-react";
 import {computedFn} from "mobx-utils";
 import {stylesheet} from "typestyle";
 import TodoList from "./TodoList";
-import TodoAddBtn from "./TodoAdd";
+import TodoAdd from "./TodoAdd";
 
 export interface AppProps {
 
@@ -19,7 +19,7 @@ const App = (props: AppProps) => {
     return (
         <div className={styles.wrap}>
             <TodoList/>
-            <TodoAddBtn/>
+            <TodoAdd/>
         </div>
     )
 }
