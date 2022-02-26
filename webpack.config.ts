@@ -1,7 +1,7 @@
-import { Configuration as DevServerConfiguration } from "webpack-dev-server";
-import { Configuration } from "webpack"
+import {Configuration as DevServerConfiguration} from "webpack-dev-server";
+import {Configuration} from "webpack"
 import * as path from "path";
-import * as CopyPlugin from "copy-webpack-plugin";
+import CopyPlugin from "copy-webpack-plugin";
 
 const devServerConfig: DevServerConfiguration = {
     port: 3001,
