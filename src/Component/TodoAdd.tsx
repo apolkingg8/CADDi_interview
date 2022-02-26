@@ -4,6 +4,7 @@ import {computedFn} from "mobx-utils";
 import {stylesheet} from "typestyle";
 import todoStore from "../store/todoStore";
 import TodoData from "../Klass/TodoData";
+import styleStore from "../store/styleStore";
 
 export interface TodoAddProps {
 
@@ -11,7 +12,10 @@ export interface TodoAddProps {
 
 const getStyles = computedFn(() => (stylesheet({
     wrap: {
-
+        ...styleStore.centerRow,
+    },
+    input: {
+        flex: 1,
     },
 })))
 
@@ -22,6 +26,7 @@ const TodoAdd = (props: TodoAddProps) => {
     return (
         <div className={styles.wrap}>
             <input
+                className={styles.input}
                 type="text"
                 value={value}
                 onChange={(event)=> {

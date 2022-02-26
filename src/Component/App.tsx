@@ -10,7 +10,9 @@ export interface AppProps {
 }
 
 const getStyles = computedFn(() => (stylesheet({
-    wrap: {},
+    wrap: {
+        width: 320,
+    },
 })))
 
 const App = (props: AppProps) => {

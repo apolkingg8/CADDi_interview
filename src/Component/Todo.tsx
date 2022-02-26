@@ -4,13 +4,20 @@ import {computedFn} from "mobx-utils";
 import {stylesheet} from "typestyle";
 import TodoData from "../Klass/TodoData";
 import todoStore from "../store/todoStore";
+import styleStore from "../store/styleStore";
 
 export interface TodoProps {
     data: TodoData
 }
 
 const getStyles = computedFn(() => (stylesheet({
-    wrap: {},
+    wrap: {
+        ...styleStore.centerRow,
+        height: 36,
+    },
+    text: {
+        flex: 1,
+    },
 })))
 
 const Todo = (props: TodoProps) => {
@@ -18,13 +25,15 @@ const Todo = (props: TodoProps) => {
 
     return (
         <div className={styles.wrap}>
-            {props.data.value}
+            <div className={styles.text}>
+                {props.data.value}
+            </div>
             <button
                 onClick={()=> {
                     todoStore.removeById(props.data.id)
                 }}
             >
-                remove
+                Remove
             </button>
         </div>
     )

@@ -11,7 +11,9 @@ export interface TodoListProps {
 }
 
 const getStyles = computedFn(() => (stylesheet({
-    wrap: {},
+    wrap: {
+        marginBottom: 48,
+    },
 })))
 
 const TodoList = (props: TodoListProps) => {
@@ -21,7 +23,10 @@ const TodoList = (props: TodoListProps) => {
         <div className={styles.wrap}>
             {_.map(todoStore.todos, (todoData)=> {
                 return (
-                    <Todo data={todoData}/>
+                    <Todo
+                        key={todoData.id}
+                        data={todoData}
+                    />
                 )
             })}
         </div>

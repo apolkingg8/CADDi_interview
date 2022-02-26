@@ -6,10 +6,10 @@ export class TodoStore {
 
     todos: TodoData[] = [
         new TodoData({
-            value: '0',
+            value: 'Todo 0',
         }),
         new TodoData({
-            value: '1',
+            value: 'Todo 1',
         }),
     ]
 
